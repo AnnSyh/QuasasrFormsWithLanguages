@@ -1,12 +1,7 @@
 <template>
   <q-page class="row items-center justify-evenly">
 	<div>
-
 		<h1>{{ t('common.welcome') }}</h1>
-		<button @click="changeLanguage('ru-RU')">Русский</button>
-		<button @click="changeLanguage('en-US')">English</button>
-      
-
 	</div>
     <example-component
       title="Example component"
@@ -23,13 +18,7 @@ import type { Todo, Meta } from '#components/models';
 import ExampleComponent from '#components/example-component';
 
 import { useI18n } from 'vue-i18n';
-const { t, locale } = useI18n();
-
-// Переключение языка
-function changeLanguage(lang: 'en-US' | 'ru-RU') {
-  locale.value = lang;
-}
-
+const { t } = useI18n();
 
 const todos = ref<Todo[]>([
   {

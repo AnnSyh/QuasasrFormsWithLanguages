@@ -16,6 +16,18 @@
         </q-toolbar-title>
 
         <div>
+			<q-btn-toggle
+				v-model="locale"
+				label="Quasar Language"
+				class="my-custom-toggle"
+				no-caps
+				rounded
+				unelevated
+				toggle-color="primary"
+				color="white"
+				text-color="primary"
+				:options="localeOptions"
+			/>
 			<q-btn
 				flat
 				round
@@ -56,6 +68,20 @@
 import { ref } from 'vue';
 import EssentialLink, { type EssentialLinkProps } from '#components/essential-link';
 import { useQuasar } from 'quasar';
+
+import { useI18n } from 'vue-i18n';
+const { locale } = useI18n({ useScope: 'global' });
+
+interface LocaleOption {
+  value: string;
+  label: string;
+}
+
+
+const localeOptions: LocaleOption[] = [
+  { value: 'en-US', label: 'English' },
+  { value: 'ru-RU', label: 'Russian' }
+]
 
 const linksList: EssentialLinkProps[] = [
   {
