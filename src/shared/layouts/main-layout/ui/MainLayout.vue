@@ -47,7 +47,7 @@
         <q-item-label
           header
         >
-          Essential Links
+			Меню
         </q-item-label>
 
         <EssentialLink
@@ -84,47 +84,35 @@ const localeOptions: LocaleOption[] = [
 ]
 
 const linksList: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+{
+    title: 'Главная страница',
+    icon: 'home',
+    link: '/'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: 'Страница пользователя',
+    icon: 'person',
+    link: '/user-edit'
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: 'Создать форму',
+    icon: 'format_list_bulleted_add',
+    link: '/create'
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: 'Опросник',
+    icon: 'quiz',
+    link: '/question'
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
+    title: 'FAQ',
+    icon: 'help',
+    link: '/faq'
   },
   {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    title: 'Swagger docs',
+    icon: 'description',
+    link: '/docs'
   }
 ];
 

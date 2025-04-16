@@ -2,8 +2,8 @@
   <q-item
     clickable
     tag="a"
-    target="_blank"
     :href="link"
+	:class="{ 'active-link': isActive }" 
   >
     <q-item-section
       v-if="icon"
@@ -20,16 +20,29 @@
 </template>
 
 <script setup lang="ts">
-export interface EssentialLinkProps {
+import { computed } from 'vue';
+
+const props = withDefaults(defineProps<{
   title: string;
   caption?: string;
   link?: string;
   icon?: string;
-};
-
-withDefaults(defineProps<EssentialLinkProps>(), {
+}>(), {
   caption: '',
   link: '#',
-  icon: '',
+  icon: ''
+});
+
+const isActive = computed(() => {
+  if (props.link === '#') return false;
+  return window.location.pathname === props.link;
 });
 </script>
+
+<style scoped>
+.active-link {
+  background: rgba(25, 118, 210, 0.1);
+  color: var(--q-primary);
+  border-left: 3px solid var(--q-primary);
+}
+</style>
